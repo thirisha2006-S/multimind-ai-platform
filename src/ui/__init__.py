@@ -1,1 +1,0 @@
-Frontend module for Multimind AI Platform.

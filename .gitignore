@@ -52,8 +52,28 @@ docker-compose.override.yml
 Thumbs.db
 Desktop.ini
 
+# Streamlit
+.streamlit/
+
+# FAISS
+faiss_index/
+
+# Data
+data/vector_store/*
+data/memory/*
+!data/.gitkeep
+
 # Node (if frontend)
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Python cache
+*.pyc
+*.pyo
