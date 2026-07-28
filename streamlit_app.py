@@ -5,7 +5,7 @@ import sys
 import os
 from typing import Optional
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 
 from multimind.utils.config import settings
 from multimind.utils.logger import get_logger
