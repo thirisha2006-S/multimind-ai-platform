@@ -1,7 +1,7 @@
-Multi-agent query engine for MultiMind AI Platform.
+"""Multi-agent query engine for MultiMind AI Platform.
 
-run_multi_agent_query() orchestrates the Supervisor → Planner →
-Research → Conflict → Draft → Validator pipeline using Cohere
+run_multi_agent_query() orchestrates the Supervisor -> Planner ->
+Research -> Conflict Detection -> Draft -> Validator pipeline using Cohere
 for each step, producing a full explainable answer with agent
 trace.
 """
@@ -32,26 +32,24 @@ def run_multi_agent_query(kb, client, question: str) -> dict:
         trace.append({"agent": "Research Agent", "input": question, "output": f"Error: {str(e)}"})
 
     # Step 4: Conflict Detection
-    # Check for conflicting values in retrieved chunks
     sources_seen = {}
     for chunk in retrieved:
         src = chunk.get("source", "unknown")
         text = chunk.get("text", "")[:200]
         if src in sources_seen:
             conflict["has_conflict"] = True
-            conflict["explanation"] = f"Different information found for same topic across '{sources_seen[src]}' and '{src}'"
-            conflict["recommended_source"] = src  # latest
+            conflict["explanation"] = f"Different information found across '{sources_seen[src]}' and '{src}'"
+            conflict["recommended_source"] = src
         else:
             sources_seen[src] = src
 
     if conflict["has_conflict"]:
-        trace.append({"agent": "Conflict Agent", "input": question, "output": f"Conflict detected: {conflict['explanation'][:80]}"})
+        trace.append({"agent": "Conflict Agent", "input": question, "output": f"Conflict detected"})
     else:
         trace.append({"agent": "Conflict Agent", "input": question, "output": "No conflicts found"})
 
     # Step 5: Draft
     try:
-        # Use Cohere for initial draft
         docs_context = "\n".join(c.get("text", "")[:300] for c in retrieved[:3]) if retrieved else "No context available"
         draft_response = client.chat(
             message=question,

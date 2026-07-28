@@ -1,5 +1,4 @@
-Company Health Engine for MultiMind AI Platform.
-
+"""Company Health Engine for MultiMind AI Platform."""
 compute_company_health() returns an overall score and per-dimension
 breakdown based on knowledge base statistics.
 """

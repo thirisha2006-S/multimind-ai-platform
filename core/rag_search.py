@@ -1,5 +1,4 @@
-RAG search module for MultiMind AI Platform.
-
+"""RAG search module for MultiMind AI Platform."""
 Provides answer_question() which uses Cohere to generate an answer
 from retrieved knowledge base chunks with confidence scoring.
 """

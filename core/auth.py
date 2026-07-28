@@ -1,5 +1,4 @@
-Authentication module for MultiMind AI Platform.
-
+"""Authentication module for MultiMind AI Platform."""
 Provides demo credentials and a simple authenticate function.
 """
 

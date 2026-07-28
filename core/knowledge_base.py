@@ -1,5 +1,4 @@
-Knowledge Base module for MultiMind AI Platform.
-
+"""Knowledge Base module for MultiMind AI Platform."""
 Provides a KnowledgeBase class that wraps FAISS vector storage
 and Cohere embedding integration for document ingestion and search.
 """

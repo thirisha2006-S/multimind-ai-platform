@@ -1,5 +1,4 @@
-Dashboard data module for MultiMind AI Platform.
-
+"""Dashboard data module for MultiMind AI Platform."""
 Provides get_dashboard_data() which returns role-specific KPI cards
 and notes for each dashboard view.
 """
