@@ -1,1 +1,1 @@
-MultiMind AI Platform - Security modules.
+"""MultiMind AI Platform - Security modules."""

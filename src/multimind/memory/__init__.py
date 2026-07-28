@@ -1,1 +1,1 @@
-MultiMind AI Platform - Organizational Memory modules.
+"""MultiMind AI Platform - Organizational Memory modules."""

@@ -1,1 +1,1 @@
-MultiMind AI Platform - Company Health Engine modules.
+"""MultiMind AI Platform - Company Health Engine modules."""

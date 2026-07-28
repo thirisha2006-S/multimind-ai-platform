@@ -1,1 +1,1 @@
-MultiMind AI Platform - Enterprise AI Operating System.
+"""MultiMind AI Platform - Enterprise AI Operating System."""

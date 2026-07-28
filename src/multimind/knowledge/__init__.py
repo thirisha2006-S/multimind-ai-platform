@@ -1,1 +1,1 @@
-MultiMind AI Platform - Knowledge Base modules.
+"""MultiMind AI Platform - Knowledge Base modules."""

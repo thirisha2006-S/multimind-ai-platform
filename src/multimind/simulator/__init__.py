@@ -1,1 +1,1 @@
-MultiMind AI Platform - Business Simulator modules.
+"""MultiMind AI Platform - Business Simulator modules."""

@@ -1,1 +1,1 @@
-MultiMind AI Platform - Silent AI Monitoring modules.
+"""MultiMind AI Platform - Silent AI Monitoring modules."""

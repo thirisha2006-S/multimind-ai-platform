@@ -1,1 +1,1 @@
-MultiMind AI Platform - Utility modules.
+"""MultiMind AI Platform - Utility modules."""

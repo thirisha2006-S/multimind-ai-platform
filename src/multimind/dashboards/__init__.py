@@ -1,1 +1,1 @@
-MultiMind AI Platform - Dashboard modules.
+"""MultiMind AI Platform - Dashboard modules."""
