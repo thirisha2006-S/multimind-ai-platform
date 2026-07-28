@@ -7,13 +7,15 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build and push Docker image
         run: |
           docker build -t multimind-ai-platform:${{ github.sha }} .
-          docker tag multimind-ai-platform:${{ github.sha }} thirisha2006-S/multimind-ai-platform:latest
+          echo "Image built successfully"
         shell: bash
