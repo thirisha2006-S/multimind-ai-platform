@@ -65,6 +65,22 @@ def check_auth():
                 email = st.text_input("Email", placeholder="you@company.com", key="email", label_visibility="collapsed")
                 password = st.text_input("Password", type="password", placeholder="Enter password", key="pass", label_visibility="collapsed")
                 submitted = st.form_submit_button("Sign In", type="primary", use_container_width=True)
+            if submitted:
+                username = email.split("@")[0] if "@" in email else email
+                user_obj = authenticator.register_user(
+                    username=username, password=password, role="employee",
+                    email=email, department="Engineering",
+                )
+                user = {
+                    "user_id": user_obj.user_id,
+                    "username": user_obj.username,
+                    "role": user_obj.role,
+                    "email": user_obj.email,
+                    "department": user_obj.department,
+                }
+                st.session_state.user = user
+                audit_logger.log_login(user["user_id"], success=True)
+                st.rerun()
             st.caption("Secure Enterprise Login")
             with st.expander("Demo credentials"):
                 st.code("Email: ceo@multimind.ai  |  Password: ceo123  |  Role: CEO")
